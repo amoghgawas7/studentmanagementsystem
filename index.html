@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SMS Admin Panel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2> Student Management System</h2>
+        <ul>
+            <li onclick="scrollToSection('dashboard')">Dashboard</li>
+            <li onclick="scrollToSection('addStudent')">Add Student</li>
+            <li onclick="scrollToSection('attendance')">Attendance</li>
+            <li onclick="scrollToSection('grades')">Grades</li>
+            <li onclick="scrollToSection('students')">Students</li>
+        </ul>
+    </aside>
+
+    <!-- Main -->
+    <main class="main">
+
+        <!-- Topbar -->
+        <div class="topbar">
+            <h1>Admin Dashboard</h1>
+        </div>
+
+        <!-- Stats -->
+        <section id="dashboard" class="card">
+            <h2>Dashboard</h2>
+            <div class="stats">
+                <div class="stat">
+                    <h3>Total Students</h3>
+                    <p id="totalStudents">0</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Add Student -->
+        <section id="addStudent" class="card">
+            <h2>Add Student</h2>
+            <div class="form-grid">
+                <input id="name" placeholder="Name">
+                <input id="email" placeholder="Email">
+                <input id="department" placeholder="Department">
+            </div>
+            <button onclick="addStudent()">Add Student</button>
+        </section>
+
+        <!-- Attendance -->
+        <section id="attendance" class="card">
+            <h2>Attendance</h2>
+            <div class="form-grid">
+                <input id="student_id" placeholder="Student ID">
+                <input id="course_id" placeholder="Course ID">
+                <input id="date" type="date">
+                <select id="status">
+                    <option>Present</option>
+                    <option>Absent</option>
+                </select>
+            </div>
+            <button onclick="markAttendance()">Submit</button>
+        </section>
+
+        <!-- Grades -->
+        <section id="grades" class="card">
+            <h2>Grades</h2>
+            <div class="form-grid">
+                <input id="g_student_id" placeholder="Student ID">
+                <input id="g_course_id" placeholder="Course ID">
+                <input id="marks" placeholder="Marks">
+            </div>
+            <button onclick="addGrades()">Add</button>
+        </section>
+
+        <!-- Students -->
+        <section id="students" class="card">
+            <h2>Students</h2>
+            <button onclick="getStudents()">Load Students</button>
+            <ul id="studentList" class="student-list"></ul>
+        </section>
+
+    </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
